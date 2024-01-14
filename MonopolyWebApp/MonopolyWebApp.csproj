@@ -8,6 +8,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="Views\" />
+    <Folder Include="Application\" />
   </ItemGroup>
 
 </Project>
