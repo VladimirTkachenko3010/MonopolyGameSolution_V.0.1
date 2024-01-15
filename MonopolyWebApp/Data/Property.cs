@@ -13,35 +13,35 @@ namespace MonopolyWebApp.Models
         /// <summary>
         /// Buy price
         /// </summary>
-        public ushort Price { get; set; }
+        public int Price { get; set; }
         /// <summary>
         /// First rent(without houses etc)
         /// </summary>
-        public ushort Rent { get; set; }
+        public int Rent { get; set; }
         /// <summary>
         /// Rent if 1 house on branch
         /// </summary>
-        public ushort Rent1House { get; set; }
+        public int Rent1House { get; set; }
         /// <summary>
         /// Rent if 2 house on branch
         /// </summary>
-        public ushort Rent2House { get; set; }
+        public int Rent2House { get; set; }
         /// <summary>
         /// Rent if 3 house on branch
         /// </summary>
-        public ushort Rent3House { get; set; }
+        public int Rent3House { get; set; }
         /// <summary>
         /// Rent if 4 house on branch
         /// </summary>
-        public ushort Rent4House { get; set; }
+        public int Rent4House { get; set; }
         /// <summary>
         /// Rent if Hotel on branch
         /// </summary>
-        public ushort RentHotel { get; set; }
+        public int RentHotel { get; set; }
         /// <summary>
         /// закладывание
         /// </summary>
-        public ushort MortageValue { get; set;}
+        public int MortageValue { get; set;}
         /// <summary>
         /// Не/Заложено
         /// </summary>
@@ -49,7 +49,7 @@ namespace MonopolyWebApp.Models
         /// <summary>
         /// Стоимость постройки
         /// </summary>
-        public ushort BuildingCost { get; set; }
+        public int BuildingCost { get; set; }
         /// <summary>
         /// Color of property
         /// </summary>
@@ -77,8 +77,8 @@ namespace MonopolyWebApp.Models
         /// <param name="buildingCost">Стоимость постройки</param>
         /// <param name="color">Color of property</param>
         /// <param name="owner">Owner of property</param>
-        public Property(string name, ushort price, ushort rent, ushort rent1House, ushort rent2House, ushort rent3House,
-            ushort rent4House, ushort rentHotel, ushort mortageValue, bool isMortagaged, ushort buildingCost, string color, string owner)
+        public Property(string name, int price, int rent, int rent1House, int rent2House, int rent3House,
+            int rent4House, int rentHotel, int mortageValue, bool isMortagaged, int buildingCost, string color, string owner)
         {
             Name = name;
             Price = price;

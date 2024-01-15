@@ -25,19 +25,19 @@ namespace MonopolyWebApp.Models
         /// <summary>
         /// Карточки выхода из тюрьмы
         /// </summary>
-        public ushort GetOutOfJailAmount { get; set; }
+        public int GetOutOfJailAmount { get; set; }
         /// <summary>
         /// Кол-во ходов в тюрьме
         /// </summary>
-        public ushort JailTurnCount { get; set; }
+        public int JailTurnCount { get; set; }
         /// <summary>
         /// Count of doubles of dice
         /// </summary>
-        public ushort DoublesCount{ get;set; }
+        public int DoublesCount{ get;set; }
         /// <summary>
         /// Position of Player on board
         /// </summary>
-        public ushort BoardPos { get; set; }
+        public int BoardPos { get; set; }
         /// <summary>
         /// Not/InJail
         /// </summary>
@@ -45,19 +45,19 @@ namespace MonopolyWebApp.Models
         /// <summary>
         /// Houses of player
         /// </summary>
-        public ushort HouseAmount { get; set; }
+        public int HouseAmount { get; set; }
         /// <summary>
         /// hotels of Player
         /// </summary>
-        public ushort HotelAmount { get; set;}
+        public int HotelAmount { get; set;}
         /// <summary>
         /// dice roll 2-12
         /// </summary>
-        public ushort DiceRoll{ get; set;}
+        public int DiceRoll{ get; set;}
         /// <summary>
         /// The player's "position" in the player roster.
         /// </summary>
-        public ushort RosterPosition { get; set;}
+        public int RosterPosition { get; set;}
         /// <summary>
         /// Not/Passed go
         /// </summary>
