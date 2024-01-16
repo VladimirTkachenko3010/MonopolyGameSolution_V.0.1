@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using System.Drawing;
+using System.Threading;
+using System.Xml.Linq;
 
 namespace MonopolyWebApp.Models
 {
@@ -93,6 +96,26 @@ namespace MonopolyWebApp.Models
             BuildingCost = buildingCost;
             Color = color;
             Owner = owner;
+        }
+
+        /// <summary>
+        /// default ctor
+        /// </summary>
+        public Property()
+        {
+            Name = "N/A";
+            Price = 0;
+            Rent = 0;
+            Rent1House = 0;
+            Rent2House = 0;
+            Rent3House = 0;
+            Rent4House = 0;
+            RentHotel = 0;
+            MortageValue = 0;
+            IsMortagaged = false;
+            BuildingCost = 0;
+            Color = "N/A";
+            Owner = "N/A";
         }
 
     }
