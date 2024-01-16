@@ -4,6 +4,8 @@ namespace MonopolyWebApp.Data
 {
     public class Space
     {
+        #region Space properties
+
         /// <summary>
         /// private The name of the space.
         /// </summary>
@@ -12,18 +14,56 @@ namespace MonopolyWebApp.Data
         /// public The name of the space.
         /// </summary>
         public string Name { get { return name; } }
+
         /// <summary>
-        /// The property on the space. 
+        /// private The property on the space. 
         /// </summary>
-        private Property property { get; set; }
+        private Property property;
         /// <summary>
-        /// A boolean that determines whether or not the space has a property.
+        /// public The property on the space. 
         /// </summary>
-        private bool HasProp { get; set; }
+        public Property Property { get { return property; } }
+
         /// <summary>
-        /// The amount of buildings on the space.
+        /// private A boolean that determines whether or not the space has a property.
         /// </summary>
-        private int BuildingAmount { get; set; }
+        private bool hasProp;
+        /// <summary>
+        /// public A boolean that determines whether or not the space has a property.
+        /// </summary>
+        public bool HasProp
+        {
+            get
+            {
+                return hasProp;
+            }
+            set
+            {
+                hasProp = value;
+            }
+        }
+
+        /// <summary>
+        /// private The amount of buildings on the space.
+        /// </summary>
+        private int buildingAmount;
+        /// <summary>
+        /// public The amount of buildings on the space.
+        /// </summary>
+        public int BuildingAmount {
+            get
+            {
+                return buildingAmount;
+            }
+            set
+            {
+                buildingAmount = value;
+            }
+        }
+
+        #endregion
+
+        #region ctors
 
         /// <summary>
         /// default ctor
@@ -32,8 +72,8 @@ namespace MonopolyWebApp.Data
         {
             name = "N/A";
             property = new Property();
-            HasProp = false;
-            BuildingAmount = 0;
+            hasProp = false;
+            buildingAmount = 0;
         }
 
         /// <summary>
@@ -44,8 +84,8 @@ namespace MonopolyWebApp.Data
         {
             name=property.Name;
             this.property = property;
-            HasProp = true;
-            BuildingAmount = 0;
+            hasProp = true;
+            buildingAmount = 0;
         }
 
         /// <summary>
@@ -56,43 +96,10 @@ namespace MonopolyWebApp.Data
         {
             this.name = name;
             property = new Property();
-            HasProp = false;
-            BuildingAmount = 0;
+            hasProp = false;
+            buildingAmount = 0;
         }
 
-        /// <summary>
-        /// Gets the property on the space.
-        /// </summary>
-        /// <returns></returns>
-        public Property GetProperty() { return property; }
-
-        public int CalcRent()
-        {
-            switch(BuildingAmount)
-            {
-                case 1:
-                    return property.Rent1House;
-                case 2:
-                    return property.Rent2House;
-                case 3:
-                    return property.Rent3House;
-                case 4:
-                    return property.Rent4House;
-                case 5:
-                    return property.RentHotel;
-                default:
-                    return property.Rent;
-            }
-        }
-
-        public void AddBuilding()
-        {
-            BuildingAmount++;
-        }
-
-        public void RemoveBuilding()
-        { 
-            BuildingAmount--;
-        }
+        #endregion
     }
 }
