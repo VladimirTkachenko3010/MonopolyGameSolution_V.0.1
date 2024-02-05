@@ -1,4 +1,6 @@
 ﻿using MonopolyWebApp.Data;
+using MonopolyWebApp.Application;
+using System.Collections.Generic;
 
 namespace MonopolyWebApp.Models
 {
@@ -85,6 +87,17 @@ namespace MonopolyWebApp.Models
                 new Space("Luxury Tax"), new Space(property28) };
             #endregion
 
+            #region Shuffle chance and community decks
+            var chanceDeckList = new List<Card>();
+            var chanceDeck = new Deck(chanceDeckList, "Chance");
+            var communityChestDeckList = new List<Card>();
+            var communityChestDeck = new Deck(communityChestDeckList, "Community");
+
+            DeckApp deckApp = new DeckApp();
+            deckApp.ShuffleDeck(chanceDeckList);
+            deckApp.ShuffleDeck(communityChestDeckList);
+
+            #endregion
         }
     }
 }

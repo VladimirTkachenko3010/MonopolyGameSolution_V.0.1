@@ -17,13 +17,14 @@ namespace MonopolyWebApp.Data
         /// ctor that initializes a deck of cards specified by the string passed in.
         /// </summary>
         /// <param name="deckName"></param>
-        public Deck(string deckName)
+        public Deck(List<Card> deck, string deckName)
         {
             // Only initialize the deck if the name is either "Chance" or "Community."
             if (deckName == "Chance")
             {
                 // Add the Chance cards to the deck.
-                var deck = new List<Card>();
+                
+                //var deck = new List<Card>();
                 
                 #region chance deck cards
 
@@ -49,7 +50,8 @@ namespace MonopolyWebApp.Data
             else if (deckName == "Community")
             {
                 //Add the Community Chest cards to the deck.
-                var deck = new List<Card>();
+               
+                //var deck = new List<Card>();
 
                 #region community chest cards
 
