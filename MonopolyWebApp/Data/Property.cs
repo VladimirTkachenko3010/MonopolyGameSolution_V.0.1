@@ -13,6 +13,12 @@ namespace MonopolyWebApp.Models
         /// Property name
         /// </summary>
         public string Name { get; set; } = string.Empty;
+        
+        /// <summary>
+        /// Img of prop
+        /// </summary>
+        public string Img { get; set; }
+
         /// <summary>
         /// Buy price
         /// </summary>
@@ -68,6 +74,7 @@ namespace MonopolyWebApp.Models
         /// Property ctor
         /// </summary>
         /// <param name="name">Property name</param>
+        /// <param name="img">Property img</param>
         /// <param name="price">Buy price</param>
         /// <param name="rent">First rent(without houses etc)</param>
         /// <param name="rent1House"> Rent if 1 house on branch</param>
@@ -80,10 +87,11 @@ namespace MonopolyWebApp.Models
         /// <param name="buildingCost">Стоимость постройки</param>
         /// <param name="color">Color of property</param>
         /// <param name="owner">Owner of property</param>
-        public Property(string name, int price, int rent, int rent1House, int rent2House, int rent3House,
+        public Property(string name, string img, int price, int rent, int rent1House, int rent2House, int rent3House,
             int rent4House, int rentHotel, int mortageValue, bool isMortagaged, int buildingCost, string color, string owner)
         {
             Name = name;
+            Img = img;
             Price = price;
             Rent = rent;
             Rent1House = rent1House;
@@ -104,6 +112,7 @@ namespace MonopolyWebApp.Models
         public Property()
         {
             Name = "N/A";
+            Img = "N/A";
             Price = 0;
             Rent = 0;
             Rent1House = 0;

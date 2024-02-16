@@ -10,15 +10,27 @@ namespace MonopolyWebApp.Data
         /// private The name of the space.
         /// </summary>
         private string name;
+
         /// <summary>
         /// public The name of the space.
         /// </summary>
         public string Name { get { return name; } }
 
         /// <summary>
+        /// private path to the img of the space.
+        /// </summary>
+        private string img;
+
+        /// <summary>
+        /// public path to the img of the space.
+        /// </summary>
+        public string Img { get { return img; } }
+
+        /// <summary>
         /// private The property on the space. 
         /// </summary>
         private Property property;
+
         /// <summary>
         /// public The property on the space. 
         /// </summary>
@@ -71,6 +83,7 @@ namespace MonopolyWebApp.Data
         public Space()
         {
             name = "N/A";
+            img = "~/images/properties/40.png";
             property = new Property();
             hasProp = false;
             buildingAmount = 0;
@@ -83,6 +96,7 @@ namespace MonopolyWebApp.Data
         public Space(Property property)
         {
             name=property.Name;
+            img = property.Img;
             this.property = property;
             hasProp = true;
             buildingAmount = 0;
@@ -92,9 +106,10 @@ namespace MonopolyWebApp.Data
         /// Constructor that initializes a space that does not have a property on it.
         /// </summary>
         /// <param name="name"></param>
-        public Space(string name)
+        public Space(string name, string img)
         {
             this.name = name;
+            this.img = img;
             property = new Property();
             hasProp = false;
             buildingAmount = 0;
