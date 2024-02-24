@@ -18,17 +18,17 @@ namespace MonopolyWebApp.Application
             switch (space.BuildingAmount)
             {
                 case 1:
-                    return space.Property.Rent1House;
+                    return space.Property.Rent.RentOne;
                 case 2:
-                    return space.Property.Rent2House;
+                    return space.Property.Rent.RentTwo;
                 case 3:
-                    return space.Property.Rent3House;
+                    return space.Property.Rent.RentThree;
                 case 4:
-                    return space.Property.Rent4House;
+                    return space.Property.Rent.RentFour;
                 case 5:
-                    return space.Property.RentHotel;
+                    return space.Property.Rent.RentHotel;
                 default:
-                    return space.Property.Rent;
+                    return space.Property.Rent.RentBase;
             }
         }
 

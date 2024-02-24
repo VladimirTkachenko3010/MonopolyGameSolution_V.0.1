@@ -23,9 +23,9 @@ namespace MonopolyWebApp.Models
         public string CardType { get; set; }
 
         /// <summary>
-        /// CardPrice of Card
+        /// Price of Card
         /// </summary>
-        public int CardPrice { get; set; }
+        public int Price { get; set; }
 
         /// <summary>
         /// description of card

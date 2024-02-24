@@ -7,71 +7,29 @@ namespace MonopolyWebApp.Data
         #region Space properties
 
         /// <summary>
-        /// private The name of the space.
-        /// </summary>
-        private string name;
-
-        /// <summary>
         /// public The name of the space.
         /// </summary>
-        public string Name { get { return name; } }
-
-        /// <summary>
-        /// private path to the img of the space.
-        /// </summary>
-        private string img;
+        public string Name { get; set; }
 
         /// <summary>
         /// public path to the img of the space.
         /// </summary>
-        public string Img { get { return img; } }
-
-        /// <summary>
-        /// private The property on the space. 
-        /// </summary>
-        private Property property;
+        public string Img { get; set; }
 
         /// <summary>
         /// public The property on the space. 
         /// </summary>
-        public Property Property { get { return property; } }
+        public Property Property { get; set; }
 
-        /// <summary>
-        /// private A boolean that determines whether or not the space has a property.
-        /// </summary>
-        private bool hasProp;
         /// <summary>
         /// public A boolean that determines whether or not the space has a property.
         /// </summary>
-        public bool HasProp
-        {
-            get
-            {
-                return hasProp;
-            }
-            set
-            {
-                hasProp = value;
-            }
-        }
+        public bool HasProp {get; set;}
 
-        /// <summary>
-        /// private The amount of buildings on the space.
-        /// </summary>
-        private int buildingAmount;
         /// <summary>
         /// public The amount of buildings on the space.
         /// </summary>
-        public int BuildingAmount {
-            get
-            {
-                return buildingAmount;
-            }
-            set
-            {
-                buildingAmount = value;
-            }
-        }
+        public int BuildingAmount { get; set; }
 
         #endregion
 
@@ -82,11 +40,11 @@ namespace MonopolyWebApp.Data
         /// </summary>
         public Space()
         {
-            name = "N/A";
-            img = "~/images/properties/40.png";
-            property = new Property();
-            hasProp = false;
-            buildingAmount = 0;
+            Name = "N/A";
+            Img = "~/images/properties/40.png";
+            Property = new Property();
+            HasProp = false;
+            BuildingAmount = 0;
         }
 
         /// <summary>
@@ -95,11 +53,11 @@ namespace MonopolyWebApp.Data
         /// <param name="property"></param>
         public Space(Property property)
         {
-            name=property.Name;
-            img = property.Img;
-            this.property = property;
-            hasProp = true;
-            buildingAmount = 0;
+            Name=property.Name;
+            Img = property.Img;
+            this.Property = property;
+            HasProp = true;
+            BuildingAmount = 0;
         }
 
         /// <summary>
@@ -108,11 +66,11 @@ namespace MonopolyWebApp.Data
         /// <param name="name"></param>
         public Space(string name, string img)
         {
-            this.name = name;
-            this.img = img;
-            property = new Property();
-            hasProp = false;
-            buildingAmount = 0;
+            this.Name = name;
+            this.Img = img;
+            Property = new Property();
+            HasProp = false;
+            BuildingAmount = 0;
         }
 
         #endregion

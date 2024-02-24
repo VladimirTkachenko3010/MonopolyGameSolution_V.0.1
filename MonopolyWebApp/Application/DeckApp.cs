@@ -2,6 +2,7 @@
 using MonopolyWebApp.Data;
 using System;
 using System.Collections.Generic;
+using Microsoft.VisualBasic;
 
 namespace MonopolyWebApp.Application
 {
@@ -11,13 +12,13 @@ namespace MonopolyWebApp.Application
         #region funcs
 
         /// <summary>
-        /// shuffles the deck
+        /// shuffles the deck twice(for a good shuffle)
         /// </summary>
         /// <param name="deck"></param>
         public void ShuffleDeck(List<Card> deck)
         {
             Random rand = new Random();
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < (deck.Count*2); i++)
             {
                 int randIndex = rand.Next(0,16);
                 Card randCard = (Card)deck[randIndex];
