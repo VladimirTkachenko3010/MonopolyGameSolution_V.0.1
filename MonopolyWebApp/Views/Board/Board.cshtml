@@ -1,0 +1,139 @@
+﻿@using MonopolyWebApp.Data
+@using MonopolyWebApp.Models
+@model Board
+
+
+<head>
+ <link rel="stylesheet" href="/css/Style.css" />
+
+</head>
+
+
+
+@{
+    Layout = null;
+}
+
+
+<h1>
+    THIS IS Board.CSHTML
+</h1>
+
+
+<br />
+<h3> карточка шанс описание: @Model.deckApp.GetCardOnTop(@Model.chanceDeckList).Description</h3>
+<br />
+<br />
+<br />
+
+<table border="1">
+    @for (int i = 0; i < 11; i++)
+    {
+        <tr>
+            @for (int j = 0; j < 11; j++)
+            {
+                @if ((i == 0 || i == 10) || (j == 0 || j == 10))
+                {
+                    int arrayIndex;
+                    if (i == 0)
+                    {
+                        arrayIndex = j;
+                    }
+                    else if (j == 10)
+                    {
+                        arrayIndex = 10 + i;
+                    }
+                    else if (i == 10)
+                    {
+                        arrayIndex = 20 + (10 - j);
+                    }
+                    else // j == 0
+                    {
+                        arrayIndex = 30 + (10 - i);
+                    }
+                    <th>
+                        @Model.spaceContainer[arrayIndex].Name
+                        <br>
+                        <img src="@Url.Content(@Model.spaceContainer[arrayIndex].Img)" alt="space image" height="80" />
+                        <br>
+                        @Model.spaceContainer[arrayIndex].Property.Price
+                    </th>
+                }
+                else if (i == 1 && j == 1)
+                {
+                    <td colspan="9" rowspan="9">Объединенная ячейка для карт Шанс + Общественная казна + прочего</td>
+                }
+            }
+        </tr>
+    }
+</table>
+
+<br />
+<br />
+<hr>
+<br />
+<h2>скелет таблицы:</h2>
+<br />
+<br />
+
+<table>
+    @for (int i = 0; i < 11; i++)
+    {
+        <tr>
+            @for (int j = 0; j < 11; j++)
+            {
+                @if ((i == 0 || i == 10) || (j == 0 || j == 10))
+                {
+                    <td>i = @i j = @j</td>
+                }
+                else if (i == 1 && j == 1)
+                {
+                    <td colspan="9" rowspan="9">Объединенная ячейка i = @i j = @j</td>
+                }
+            }
+        </tr>
+    }
+</table>
+
+<br />
+<br />
+<hr />
+<br />
+<h2>перечисление элементов ячеек</h2>
+<br />
+<br />
+<p>
+    @{
+        foreach (Space elem in Model.spaceContainer)
+        {
+            <h4>@elem.Name - @elem.Property.Price +@elem.Img+</h4>
+            <img src="@Url.Content(elem.Img)" alt="space image" height="80" />
+            <h3>@Model.deckApp.GetCardOnTop(@Model.chanceDeckList).Description</h3>
+            //после перемешивания в board выводит верхнюю карту шанса
+            <br>
+
+        }
+    }
+</p>
+
+
+
+<h3>EXAMPLE 3</h3>
+
+@* <div id="ui-fields" class="table-body-board-fields"><div mnpl-corner="0" class="table-body-board-fields-one _corner_undefined"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/start.png&quot;);"></div></div><!----></div><div mnpl-group="1" mnpl-line="0" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>600</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/1/chanel.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="0" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance.png&quot;);"></div></div><!----></div><div mnpl-group="1" mnpl-line="0" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>600</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/1/hugo_boss.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="0" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/tax_income.png&quot;);"></div></div><!----></div><div mnpl-group="0" mnpl-line="0" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/0/mercedes.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="2" mnpl-line="0" class="table-body-board-fields-one" mnpl-owner="1"><div class="table-body-board-fields-one-label"><div>60</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/2/adidas.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="0" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance.png&quot;);"></div></div><!----></div><div mnpl-group="2" mnpl-line="0" class="table-body-board-fields-one" mnpl-owner="0"><div class="table-body-board-fields-one-label"><div>60</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/2/puma.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="2" mnpl-line="0" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>1,200</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/2/lacoste.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-corner="1" class="table-body-board-fields-one _corner_undefined"><!----><div class="table-body-board-fields-one-body"><div class="_jail-visit"></div><div class="_jail-cell"><div></div></div></div><!----></div><div mnpl-group="3" mnpl-line="1" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>1,400</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/3/vk.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="9" mnpl-line="1" class="table-body-board-fields-one" mnpl-owner="3"><div class="table-body-board-fields-one-label" mnpl-currency="x"><div>100</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/9/rockstar_games.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="3" mnpl-line="1" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>1,400</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/3/facebook.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="3" mnpl-line="1" class="table-body-board-fields-one" mnpl-owner="1"><div class="table-body-board-fields-one-label"><div>120</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/3/twitter.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="0" mnpl-line="1" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/0/audi.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="4" mnpl-line="1" class="table-body-board-fields-one" mnpl-owner="0"><div class="table-body-board-fields-one-label"><div>140</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/4/coca_cola.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="1" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance.png&quot;);"></div></div><!----></div><div mnpl-group="4" mnpl-line="1" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>1,800</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/4/pepsi.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="4" mnpl-line="1" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/4/fanta.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-corner="2" mnpl-special="1" class="table-body-board-fields-one _corner_jackpot"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/jackpot.svg&quot;);"></div></div><!----></div><div mnpl-group="5" mnpl-line="2" class="table-body-board-fields-one" mnpl-owner="0"><div class="table-body-board-fields-one-label"><div>180</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/5/american_airlines.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="2" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance.png&quot;);"></div></div><!----></div><div mnpl-group="5" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,200</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/5/lufthansa.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="5" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,400</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/5/british_airways.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="0" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/0/ford.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="6" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,600</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/6/max_burgers.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="6" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,600</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/6/burger_king.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="9" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>1,500</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/9/rovio.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="6" mnpl-line="2" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,800</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/6/kfc.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-corner="3" mnpl-special="1" class="table-body-board-fields-one _corner_goToJail"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/goToJail.png&quot;);"></div></div><!----></div><div mnpl-group="7" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>3,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/7/holiday_inn.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="7" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>3,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/7/radisson_blu.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="3" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance_rotated.png&quot;);"></div></div><!----></div><div mnpl-group="7" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>3,200</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/7/novotel.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-group="0" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>2,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/0/land_rover.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="3" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/tax_luxury.png&quot;);"></div></div><!----></div><div mnpl-group="8" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>3,500</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/8/apple.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div><div mnpl-line="3" mnpl-special="1" class="table-body-board-fields-one"><!----><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/special/chance_rotated.png&quot;);"></div></div><!----></div><div mnpl-group="8" mnpl-line="3" class="table-body-board-fields-one"><div class="table-body-board-fields-one-label"><div>4,000</div></div><div class="table-body-board-fields-one-body"><div class="_logo" style="background-image: url(&quot;https://m1.dogecdn.wtf/fields/brands/8/nokia.svg&quot;);"></div></div><div class="table-body-board-fields-one-level"></div><!----></div></div> *@
+
+<h3>end of ex3</h3>
+
+<hr>
+<br />
+<br />
+<br />
+
+
+
+
+
+
+<h1>
+    THIS IS End of Board.CSHTML
+</h1>
