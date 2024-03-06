@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using MonopolyWebApp.Data;
+using System.Collections;
 using System.Drawing;
 using System.Threading;
 using System.Xml.Linq;
@@ -9,7 +10,10 @@ namespace MonopolyWebApp.Models
     public class Property
     {
         #region Свойства собственности
-
+        /// <summary>
+        /// Property Id
+        /// </summary>
+        public int PropertyID { get; set; }
         /// <summary>
         /// Property name
         /// </summary>
@@ -51,6 +55,8 @@ namespace MonopolyWebApp.Models
         /// </summary>
         public string Owner { get; set; }
 
+        //public virtual ICollection<Space> Spaces { get; set; }
+
         #endregion
 
         /// <summary>
@@ -66,7 +72,7 @@ namespace MonopolyWebApp.Models
         /// <param name="rentFour"> Rent if 4 house on branch</param>
         /// <param name="rentHotel"> Rent if Hotel on branch</param>
         /// <param name="mortageValue">закладываемая стоимость</param>
-        /// <param name="isMortage">Не/Заложено</param>
+        /// <param name="isMortagaged">Не/Заложено</param>
         /// <param name="buildingCost">Стоимость постройки</param>
         /// <param name="color">Color of property</param>
         /// <param name="owner">Owner of property</param>

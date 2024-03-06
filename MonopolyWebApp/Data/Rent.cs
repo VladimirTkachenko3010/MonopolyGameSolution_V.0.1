@@ -2,7 +2,10 @@
 {
     public class Rent
     {
-
+        /// <summary>
+        /// rent id
+        /// </summary>
+        public int RentID { get; set; }
         /// <summary>
         /// First rent(without houses etc)
         /// </summary>

@@ -31,12 +31,7 @@ namespace MonopolyWebApp.Models
         /// description of card
         /// </summary>
         public string Description
-        {
-            get
-            {
-                return description;
-            }
-        }
+        {get; set;}
 
         /// <summary>
         /// action of card

@@ -1,14 +1,30 @@
-﻿using MonopolyWebApp.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using MonopolyWebApp.Data;
+using MonopolyWebApp.Database;
 using MonopolyWebApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MonopolyWebApp.Application
 {
     public class BoardApp
     {
+        private readonly MonopolyDBContext _monopolyDBContent;
 
-        public void FillBoard(List<Space> spaceContainer, List<Card> chanceDeckList, List<Card> communityChestDeckList, DeckApp deckApp)
+        public BoardApp(MonopolyDBContext monopolyDBContent)
+        {
+            _monopolyDBContent = monopolyDBContent;
+        }
+
+        public BoardApp()
+        {
+        }
+
+        public async Task FillBoard(List<Space> spaceContainer, List<Card> chanceDeckList, List<Card> communityChestDeckList, DeckApp deckApp)
         {
             #region Properties
 
@@ -74,6 +90,21 @@ namespace MonopolyWebApp.Application
             deckApp.ShuffleDeck(communityChestDeckList);
 
             #endregion
+            ////так можно выводить из бд что-то
+            //var card = _monopolyDBContent.Cards
+            //    .FirstOrDefaultAsync(c => c.CardId == 1);
+            //if(card == null)
+            //{
+
+            //}
+
+            ////доабвить спейсы в бд
+            //foreach (var space in spaceContainer)
+            //{
+            //    await _monopolyDBContent.Spaces.AddAsync(space);
+            //}
+
+            //await _monopolyDBContent.SaveChangesAsync();
 
         }
 
