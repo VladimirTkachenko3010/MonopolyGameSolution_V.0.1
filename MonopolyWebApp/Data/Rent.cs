@@ -48,5 +48,8 @@ namespace MonopolyWebApp.Data
             RentHotel = rentHotel;
         }
 
+        public Rent()
+        {
+        }
     }
 }

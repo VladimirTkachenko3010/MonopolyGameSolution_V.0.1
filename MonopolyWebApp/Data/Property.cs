@@ -33,7 +33,7 @@ namespace MonopolyWebApp.Models
         /// <summary>
         /// Rent info
         /// </summary>
-        public Rent Rent { get; set; }
+        public Rent Rent { get; set; } = new Rent();
 
         /// <summary>
         /// закладывание
@@ -80,12 +80,17 @@ namespace MonopolyWebApp.Models
         public Property(int propertyId, string name, string img, int price, int rentID, int rentBase, int rentOne, int rentTwo, int rentThree,
             int rentFour, int rentHotel, int mortageValue, bool isMortagaged, int buildingCost, string color, string owner)
         {
-            Rent.RentID = rentID;
             PropertyID = propertyId;
             Name = name;
             Img = img;
             Price = price;
-            this.Rent = new Rent(rentID, rentBase, rentOne, rentTwo, rentThree, rentFour, rentHotel);
+            this.Rent.RentID = rentID;
+            this.Rent.RentBase = rentBase;
+            this.Rent.RentOne = rentOne;
+            this.Rent.RentTwo = rentTwo;
+            this.Rent.RentThree = rentThree;
+            this.Rent.RentFour = rentFour;
+            this.Rent.RentHotel = rentHotel;
             MortageValue = mortageValue;
             IsMortagaged = isMortagaged;
             BuildingCost = buildingCost;
