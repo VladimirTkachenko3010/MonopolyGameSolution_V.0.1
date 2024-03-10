@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace MonopolyWebApp
         {
             services.AddDbContext<MonopolyDBContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("MonopolyDBContent")));
+            services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddRazorPages();
         }
 
