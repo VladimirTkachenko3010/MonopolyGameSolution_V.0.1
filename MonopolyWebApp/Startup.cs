@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MonopolyWebApp.Database;
+using System.Reflection;
 
 namespace MonopolyWebApp
 {
