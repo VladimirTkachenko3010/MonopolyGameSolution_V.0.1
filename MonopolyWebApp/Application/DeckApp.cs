@@ -3,6 +3,7 @@ using MonopolyWebApp.Data;
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using System.Linq;
 
 namespace MonopolyWebApp.Application
 {
@@ -34,7 +35,7 @@ namespace MonopolyWebApp.Application
         /// <returns></returns>
         public Card GetCardOnTop(List<Card> deck)
         {
-            return (Card)deck[0];
+            return (Card)deck.FirstOrDefault();
         }
 
         /// <summary>

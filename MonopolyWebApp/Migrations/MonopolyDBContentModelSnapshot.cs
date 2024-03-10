@@ -73,12 +73,12 @@ namespace MonopolyWebApp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PropertyID")
+                    b.Property<int>("PropertyId")
                         .HasColumnType("int");
 
                     b.HasKey("SpaceID");
 
-                    b.HasIndex("PropertyID");
+                    b.HasIndex("PropertyId");
 
                     b.ToTable("Spaces");
                 });
@@ -108,7 +108,7 @@ namespace MonopolyWebApp.Migrations
 
                     b.HasKey("CardId");
 
-                    b.ToTable("Card");
+                    b.ToTable("Cards");
 
                     b.HasData(
                         new
@@ -117,7 +117,127 @@ namespace MonopolyWebApp.Migrations
                             Action = "advanceGo",
                             ChanceId = 0,
                             Description = "Advance to Go (collect 200$)",
-                            Price = 10
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 2,
+                            Action = "advanceProp17",
+                            ChanceId = 0,
+                            Description = "Advance to Trafalgar Square(prop17). If you pass Go, collect $200",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 3,
+                            Action = "advanceProp7",
+                            ChanceId = 0,
+                            Description = "Advance to PallMall(prop7) If you pass Go, collect $200",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 4,
+                            Action = "advanceUtility",
+                            ChanceId = 0,
+                            Description = "Advance to nearest Utility",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 5,
+                            Action = "advanceRailroad",
+                            ChanceId = 0,
+                            Description = "Advance to nearest Railroad",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 6,
+                            Action = "advanceRailroad",
+                            ChanceId = 0,
+                            Description = "Advance to nearest Railroad",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 7,
+                            Action = "bankDividend",
+                            ChanceId = 0,
+                            Description = "Bank pays you dividend of $50",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 8,
+                            Action = "jailFree",
+                            ChanceId = 0,
+                            Description = "Get Out of Jail Free!",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 9,
+                            Action = "goBack3",
+                            ChanceId = 0,
+                            Description = "Go back 3 spaces",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 10,
+                            Action = "jail",
+                            ChanceId = 0,
+                            Description = "Go directly to Jail. Do not pass Go, do not collect $200",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 11,
+                            Action = "generalRepairs",
+                            ChanceId = 0,
+                            Description = "Make general repairs on all your property. For each house, pay $25. For each hotel, pay $100.",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 12,
+                            Action = "poorTax",
+                            ChanceId = 0,
+                            Description = "Pay Poor Tax of $15",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 13,
+                            Action = "advanceProp3",
+                            ChanceId = 0,
+                            Description = "Advance to King Cross St(prop3). If you pass Go, collect $200",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 14,
+                            Action = "advanceProp28",
+                            ChanceId = 0,
+                            Description = "Advance to Mayfair(prop28). If you pass Go, collect $200",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 15,
+                            Action = "chairman",
+                            ChanceId = 0,
+                            Description = "You have been elected Chairman of the Board. Pay each player $50",
+                            Price = 0
+                        },
+                        new
+                        {
+                            CardId = 16,
+                            Action = "matures",
+                            ChanceId = 0,
+                            Description = "Your building and loan matures. Collect $150",
+                            Price = 0
                         });
                 });
 
@@ -167,7 +287,9 @@ namespace MonopolyWebApp.Migrations
                 {
                     b.HasOne("MonopolyWebApp.Models.Property", "Property")
                         .WithMany()
-                        .HasForeignKey("PropertyID");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Property");
                 });

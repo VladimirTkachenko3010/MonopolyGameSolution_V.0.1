@@ -29,45 +29,45 @@ namespace MonopolyWebApp.Application
             #region Properties
 
             //start
-            var property1 = new Property("Олд Кент Роад", "~/images/properties/2.png", 60, 2, 10, 30, 90, 160, 250, 30, false, 50, "Brown", "OWNER");
+            var property1 = new Property(0, "Олд Кент Роад", "~/images/properties/2.png", 60, 2, 10, 30, 90, 160, 250, 30, false, 50, "Brown", "OWNER");
             //Общественная казна "Community Chest"
-            var property2 = new Property("Уайтшапель Роад", "~/images/properties/4.png", 60, 4, 20, 60, 180, 320, 450, 30, false, 50, "Brown", "OWNER");
+            var property2 = new Property(1, "Уайтшапель Роад", "~/images/properties/4.png", 60, 4, 20, 60, 180, 320, 450, 30, false, 50, "Brown", "OWNER");
             //Налог -200 "Income Tax"
-            var property3 = new Property("Кинг Кросс Станция", "~/images/properties/6.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
-            var property4 = new Property("Анджел, Ислингтон", "~/images/properties/7.png", 100, 6, 30, 90, 270, 400, 550, 50, false, 50, "Light Blue", "OWNER");
+            var property3 = new Property(2, "Кинг Кросс Станция", "~/images/properties/6.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
+            var property4 = new Property(3, "Анджел, Ислингтон", "~/images/properties/7.png", 100, 6, 30, 90, 270, 400, 550, 50, false, 50, "Light Blue", "OWNER");
             //Chance
-            var property5 = new Property("Иустон Роад", "~/images/properties/9.png", 100, 6, 30, 90, 270, 400, 550, 50, false, 50, "Light Blue", "OWNER");
-            var property6 = new Property("Пентонвиль Роад", "~/images/properties/10.png", 120, 8, 40, 100, 300, 450, 600, 60, false, 50, "Light Blue", "OWNER");
+            var property5 = new Property(4, "Иустон Роад", "~/images/properties/9.png", 100, 6, 30, 90, 270, 400, 550, 50, false, 50, "Light Blue", "OWNER");
+            var property6 = new Property(5, "Пентонвиль Роад", "~/images/properties/10.png", 120, 8, 40, 100, 300, 450, 600, 60, false, 50, "Light Blue", "OWNER");
             //Jail
-            var property7 = new Property("Пэлл Мэлл", "~/images/properties/12.png", 140, 10, 50, 150, 450, 625, 750, 70, false, 100, "Pink", "OWNER");
-            var property8 = new Property("Электрическая компания", "~/images/properties/13.png", 150, 0, 0, 0, 0, 0, 0, 75, false, 0, "Utility", "OWNER");
-            var property9 = new Property("Уайтхолл", "~/images/properties/14.png", 140, 10, 50, 150, 450, 625, 750, 70, false, 100, "Pink", "OWNER");
-            var property10 = new Property("Нортумберлэнд Авеню", "~/images/properties/15.png", 160, 12, 60, 180, 500, 700, 900, 80, false, 100, "Pink", "OWNER");
-            var property11 = new Property("Марилебоне Станция", "~/images/properties/16.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
-            var property12 = new Property("Боу Стрит", "~/images/properties/17.png", 180, 14, 70, 200, 550, 750, 950, 90, false, 100, "Orange", "OWNER");
+            var property7 = new Property(6, "Пэлл Мэлл", "~/images/properties/12.png", 140, 10, 50, 150, 450, 625, 750, 70, false, 100, "Pink", "OWNER");
+            var property8 = new Property(7, "Электрическая компания", "~/images/properties/13.png", 150, 0, 0, 0, 0, 0, 0, 75, false, 0, "Utility", "OWNER");
+            var property9 = new Property(8, "Уайтхолл", "~/images/properties/14.png", 140, 10, 50, 150, 450, 625, 750, 70, false, 100, "Pink", "OWNER");
+            var property10 = new Property(9, "Нортумберлэнд Авеню", "~/images/properties/15.png", 160, 12, 60, 180, 500, 700, 900, 80, false, 100, "Pink", "OWNER");
+            var property11 = new Property(10, "Марилебоне Станция", "~/images/properties/16.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
+            var property12 = new Property(11, "Боу Стрит", "~/images/properties/17.png", 180, 14, 70, 200, 550, 750, 950, 90, false, 100, "Orange", "OWNER");
             //Общественная казна "Community Chest"
-            var property13 = new Property("Малборо стрит", "~/images/properties/19.png", 180, 14, 70, 200, 550, 750, 950, 90, false, 100, "Orange", "OWNER");
-            var property14 = new Property("Вайн стрит", "~/images/properties/20.png", 200, 16, 80, 220, 600, 800, 1000, 100, false, 100, "Orange", "OWNER");
+            var property13 = new Property(12, "Малборо стрит", "~/images/properties/19.png", 180, 14, 70, 200, 550, 750, 950, 90, false, 100, "Orange", "OWNER");
+            var property14 = new Property(13, "Вайн стрит", "~/images/properties/20.png", 200, 16, 80, 220, 600, 800, 1000, 100, false, 100, "Orange", "OWNER");
             //"Free Parking"
-            var property15 = new Property("Стрэнд", "~/images/properties/22.png", 220, 18, 90, 250, 700, 875, 1050, 110, false, 150, "Red", "OWNER");
+            var property15 = new Property(14, "Стрэнд", "~/images/properties/22.png", 220, 18, 90, 250, 700, 875, 1050, 110, false, 150, "Red", "OWNER");
             //Chance
-            var property16 = new Property("Флит Стрит", "~/images/properties/24.png", 220, 18, 90, 250, 700, 875, 1050, 110, false, 150, "Red", "OWNER");
-            var property17 = new Property("Трафальгар Площадь", "~/images/properties/25.png", 240, 20, 100, 300, 750, 925, 1100, 120, false, 150, "Red", "OWNER");
-            var property18 = new Property("Фенчорч Станция", "~/images/properties/26.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
-            var property19 = new Property("Личестер Площадь", "~/images/properties/27.png", 260, 22, 110, 330, 800, 975, 1150, 130, false, 150, "Yellow", "OWNER");
-            var property20 = new Property("Ковентри Стрит", "~/images/properties/28.png", 260, 22, 110, 330, 800, 975, 1150, 130, false, 150, "Yellow", "OWNER");
-            var property21 = new Property("Водная Станция", "~/images/properties/29.png", 150, 0, 0, 0, 0, 0, 0, 75, false, 0, "Utility", "OWNER");
-            var property22 = new Property("Пикадилли", "~/images/properties/30.png", 280, 24, 120, 360, 850, 1025, 1200, 140, false, 150, "Yellow", "OWNER");
+            var property16 = new Property(15, "Флит Стрит", "~/images/properties/24.png", 220, 18, 90, 250, 700, 875, 1050, 110, false, 150, "Red", "OWNER");
+            var property17 = new Property(16, "Трафальгар Площадь", "~/images/properties/25.png", 240, 20, 100, 300, 750, 925, 1100, 120, false, 150, "Red", "OWNER");
+            var property18 = new Property(17, "Фенчорч Станция", "~/images/properties/26.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
+            var property19 = new Property(18, "Личестер Площадь", "~/images/properties/27.png", 260, 22, 110, 330, 800, 975, 1150, 130, false, 150, "Yellow", "OWNER");
+            var property20 = new Property(19, "Ковентри Стрит", "~/images/properties/28.png", 260, 22, 110, 330, 800, 975, 1150, 130, false, 150, "Yellow", "OWNER");
+            var property21 = new Property(20, "Водная Станция", "~/images/properties/29.png", 150, 0, 0, 0, 0, 0, 0, 75, false, 0, "Utility", "OWNER");
+            var property22 = new Property(21, "Пикадилли", "~/images/properties/30.png", 280, 24, 120, 360, 850, 1025, 1200, 140, false, 150, "Yellow", "OWNER");
             //Jail
-            var property23 = new Property("Регент Стрит", "~/images/properties/32.png", 300, 26, 130, 390, 900, 1100, 1275, 150, false, 200, "Green", "OWNER");
-            var property24 = new Property("Оксфорд Стрит", "~/images/properties/33.png", 300, 26, 130, 390, 900, 1100, 1275, 150, false, 200, "Green", "OWNER");
+            var property23 = new Property(22, "Регент Стрит", "~/images/properties/32.png", 300, 26, 130, 390, 900, 1100, 1275, 150, false, 200, "Green", "OWNER");
+            var property24 = new Property(23, "Оксфорд Стрит", "~/images/properties/33.png", 300, 26, 130, 390, 900, 1100, 1275, 150, false, 200, "Green", "OWNER");
             //Общественная казна "Community Chest"
-            var property25 = new Property("Бонд Стрит", "~/images/properties/35.png", 320, 28, 150, 450, 1000, 1200, 1400, 160, false, 200, "Green", "OWNER");
-            var property26 = new Property("Ливерпуль Станция", "~/images/properties/36.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
+            var property25 = new Property(24, "Бонд Стрит", "~/images/properties/35.png", 320, 28, 150, 450, 1000, 1200, 1400, 160, false, 200, "Green", "OWNER");
+            var property26 = new Property(25, "Ливерпуль Станция", "~/images/properties/36.png", 200, 25, 50, 100, 200, 0, 0, 100, false, 0, "Railroad", "OWNER");
             //Chance
-            var property27 = new Property("Парк Лейн", "~/images/properties/38.png", 350, 35, 175, 500, 1100, 1300, 1500, 175, false, 200, "Dark Blue", "OWNER");
+            var property27 = new Property(26, "Парк Лейн", "~/images/properties/38.png", 350, 35, 175, 500, 1100, 1300, 1500, 175, false, 200, "Dark Blue", "OWNER");
             //Налог -100 "Luxury Tax"
-            var property28 = new Property("Мейфэир", "~/images/properties/40.png", 400, 50, 200, 600, 1400, 1700, 2000, 200, false, 200, "Dark Blue", "OWNER");
+            var property28 = new Property(27, "Мейфэир", "~/images/properties/40.png", 400, 50, 200, 600, 1400, 1700, 2000, 200, false, 200, "Dark Blue", "OWNER");
 
             // Put those properties into the spaceContainer, along with spaces that are not properties.
             spaceContainer.AddRange(new List<Space>

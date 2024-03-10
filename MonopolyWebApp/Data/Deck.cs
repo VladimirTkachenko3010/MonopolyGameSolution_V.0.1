@@ -32,14 +32,17 @@ namespace MonopolyWebApp.Data
                 deck.Add(new Card("Advance to Trafalgar Square(prop17). If you pass Go, collect $200", "advanceProp17"));
                 deck.Add(new Card("Advance to PallMall(prop7) If you pass Go, collect $200", "advanceProp7"));
                 deck.Add(new Card("Advance to nearest Utility", "advanceUtility"));
+
                 deck.Add(new Card("Advance to nearest Railroad", "advanceRailroad"));
                 deck.Add(new Card("Advance to nearest Railroad", "advanceRailroad"));
                 deck.Add(new Card("Bank pays you dividend of $50", "bankDividend"));
                 deck.Add(new Card("Get Out of Jail Free!", "jailFree"));
+
                 deck.Add(new Card("Go back 3 spaces", "goBack3"));
                 deck.Add(new Card("Go directly to Jail. Do not pass Go, do not collect $200", "jail"));
                 deck.Add(new Card("Make general repairs on all your property. For each house, pay $25. For each hotel, pay $100.", "generalRepairs"));
                 deck.Add(new Card("Pay Poor Tax of $15", "poorTax"));
+
                 deck.Add(new Card("Advance to King Cross St(prop3). If you pass Go, collect $200", "advanceProp3"));
                 deck.Add(new Card("Advance to Mayfair(prop28). If you pass Go, collect $200", "advanceProp28"));
                 deck.Add(new Card("You have been elected Chairman of the Board. Pay each player $50", "chairman"));

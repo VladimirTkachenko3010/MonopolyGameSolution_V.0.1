@@ -1,4 +1,5 @@
 ﻿using MonopolyWebApp.Models;
+using System.Collections.Generic;
 
 namespace MonopolyWebApp.Data
 {
@@ -36,6 +37,9 @@ namespace MonopolyWebApp.Data
         /// public The amount of buildings on the space.
         /// </summary>
         public int BuildingAmount { get; set; }
+
+        public virtual ICollection<Property> Properties { get; set; }
+
 
         #endregion
 

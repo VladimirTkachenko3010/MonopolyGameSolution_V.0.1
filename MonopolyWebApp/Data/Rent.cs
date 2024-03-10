@@ -1,4 +1,6 @@
-﻿namespace MonopolyWebApp.Data
+﻿using System.Collections.Generic;
+
+namespace MonopolyWebApp.Data
 {
     public class Rent
     {
@@ -30,6 +32,8 @@
         /// Rent if Hotel on branch
         /// </summary>
         public int RentHotel { get; set; }
+
+        //public virtual ICollection<Models.Property> Properties { get; set; }
 
 
         public Rent(int rentBase, int rentOne, int rentTwo, int rentThree, int rentFour, int rentHotel)

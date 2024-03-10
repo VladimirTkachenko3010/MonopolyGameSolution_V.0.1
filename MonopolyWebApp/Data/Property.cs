@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using MonopolyWebApp.Data;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 using System.Xml.Linq;
@@ -55,7 +56,7 @@ namespace MonopolyWebApp.Models
         /// </summary>
         public string Owner { get; set; }
 
-        //public virtual ICollection<Space> Spaces { get; set; }
+        public virtual ICollection<Space> Spaces { get; set; }
 
         #endregion
 
@@ -76,9 +77,10 @@ namespace MonopolyWebApp.Models
         /// <param name="buildingCost">Стоимость постройки</param>
         /// <param name="color">Color of property</param>
         /// <param name="owner">Owner of property</param>
-        public Property(string name, string img, int price, int rentBase, int rentOne, int rentTwo, int rentThree,
+        public Property(int propertyId, string name, string img, int price, int rentBase, int rentOne, int rentTwo, int rentThree,
             int rentFour, int rentHotel, int mortageValue, bool isMortagaged, int buildingCost, string color, string owner)
         {
+            PropertyID = propertyId;
             Name = name;
             Img = img;
             Price = price;
