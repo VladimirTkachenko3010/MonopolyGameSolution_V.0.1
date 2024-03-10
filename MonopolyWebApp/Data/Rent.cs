@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace MonopolyWebApp.Data
 {
@@ -36,8 +37,9 @@ namespace MonopolyWebApp.Data
         //public virtual ICollection<Models.Property> Properties { get; set; }
 
 
-        public Rent(int rentBase, int rentOne, int rentTwo, int rentThree, int rentFour, int rentHotel)
+        public Rent(int rentID, int rentBase, int rentOne, int rentTwo, int rentThree, int rentFour, int rentHotel)
         {
+            RentID = rentID;
             RentBase = rentBase;
             RentOne = rentOne;
             RentTwo = rentTwo;

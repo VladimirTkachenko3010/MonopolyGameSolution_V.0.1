@@ -38,7 +38,7 @@ namespace MonopolyWebApp.Data
         /// </summary>
         public int BuildingAmount { get; set; }
 
-        public virtual ICollection<Property> Properties { get; set; }
+        //public virtual ICollection<Property> Properties { get; set; }
 
 
         #endregion
