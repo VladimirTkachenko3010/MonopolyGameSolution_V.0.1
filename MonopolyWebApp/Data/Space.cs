@@ -1,10 +1,16 @@
 ﻿using MonopolyWebApp.Models;
+using System.Collections.Generic;
 
 namespace MonopolyWebApp.Data
 {
     public class Space
     {
         #region Space properties
+
+        /// <summary>
+        /// Space ID
+        /// </summary>
+        public int SpaceID { get; set; } 
 
         /// <summary>
         /// public The name of the space.
@@ -19,7 +25,8 @@ namespace MonopolyWebApp.Data
         /// <summary>
         /// public The property on the space. 
         /// </summary>
-        public Property Property { get; set; }
+        public virtual Property Property { get; set; }
+        public int PropertyId { get; set; }
 
         /// <summary>
         /// public A boolean that determines whether or not the space has a property.
@@ -30,6 +37,9 @@ namespace MonopolyWebApp.Data
         /// public The amount of buildings on the space.
         /// </summary>
         public int BuildingAmount { get; set; }
+
+        //public virtual ICollection<Property> Properties { get; set; }
+
 
         #endregion
 

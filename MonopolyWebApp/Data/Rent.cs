@@ -1,8 +1,14 @@
-﻿namespace MonopolyWebApp.Data
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+
+namespace MonopolyWebApp.Data
 {
     public class Rent
     {
-
+        /// <summary>
+        /// rent id
+        /// </summary>
+        public int RentID { get; set; }
         /// <summary>
         /// First rent(without houses etc)
         /// </summary>
@@ -28,9 +34,12 @@
         /// </summary>
         public int RentHotel { get; set; }
 
+        //public virtual ICollection<Models.Property> Properties { get; set; }
 
-        public Rent(int rentBase, int rentOne, int rentTwo, int rentThree, int rentFour, int rentHotel)
+
+        public Rent(int rentID, int rentBase, int rentOne, int rentTwo, int rentThree, int rentFour, int rentHotel)
         {
+            RentID = rentID;
             RentBase = rentBase;
             RentOne = rentOne;
             RentTwo = rentTwo;
@@ -39,5 +48,8 @@
             RentHotel = rentHotel;
         }
 
+        public Rent()
+        {
+        }
     }
 }

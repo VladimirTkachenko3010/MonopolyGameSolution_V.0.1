@@ -53,6 +53,8 @@ namespace MonopolyWebApp.Models
             spaceContainer = new List<Space>();
             boardApp = new BoardApp();
 
+
+
             boardApp.FillBoard(spaceContainer,chanceDeckList,communityChestDeckList, deckApp);
         }
     }
